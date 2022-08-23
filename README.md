@@ -40,6 +40,10 @@ Please cite following paper if these codes help your research:
 
 **Step 1.** Download CIFAR100 and form the 20 tasks based on their super classes with the [cifar2png](https://github.com/knjcode/cifar2png) tool. Or you can just download the converted version of our CIFAR100 from [here](https://drive.google.com/file/d/1eo2RhMmhxzUNOZa0Z7jy7y4lOn3lqddU/view?usp=sharing). Unzip the compressed file and place `cifar100_org/` in `data/`. 
 
+```
+gdown "https://drive.google.com/open?id=1eo2RhMmhxzUNOZa0Z7jy7y4lOn3lqddU&authuser=0" --output cifar100_20tasks.zip
+unzip cifar100_20tasks.zip -d data
+
 **Step 2.** Use the following command to train individual models for each of the 20 tasks so that we can obtain their accuracy goals. 
 
 ```

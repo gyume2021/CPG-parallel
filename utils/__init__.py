@@ -30,12 +30,12 @@ class Optimizers(object):
 class Metric(object):
     def __init__(self, name):
         self.name = name
-        self.sum = torch.tensor(0.)
-        self.n = torch.tensor(0.)
+        self.sum = torch.tensor(0.).to(device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'))
+        self.n = torch.tensor(0.).to(device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'))
         return
 
     def update(self, val, num):
-        self.sum += val * num
+        self.sum += (val * num).to(device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')) 
         self.n += num
 
     @property
