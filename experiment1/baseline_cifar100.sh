@@ -29,8 +29,7 @@ GPU_ID=0
 ARCH='vgg16_bn_cifar100'
 FINETUNE_EPOCHS=100
 
-# for TASK_ID in `seq 1 20`; do
-for TASK_ID in `seq 1 2`; do
+for TASK_ID in `seq 1 20`; do
     CUDA_VISIBLE_DEVICES=$GPU_ID python packnet_cifar100_main_normal.py \
         --arch $ARCH \
         --dataset ${DATASETS[TASK_ID]} --num_classes 5 \
