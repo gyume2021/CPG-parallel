@@ -42,10 +42,10 @@ for TASK_ID in `seq 1 2`; do
         --logfile logs/baseline_cifar100_acc.txt
 done
 
-# for HISTORY_ID in `seq 1 20`; do
-#     CUDA_VISIBLE_DEVICES=$GPU_ID python packnet_cifar100_main_normal.py \
-#         --arch $ARCH \
-#         --dataset ${DATASETS[HISTORY_ID]} --num_classes 5 \
-#         --load_folder checkpoints/baseline/experiment1/$ARCH/${DATASETS[HISTORY_ID]} \
-#         --mode inference
-# done
+for HISTORY_ID in `seq 1 20`; do
+    CUDA_VISIBLE_DEVICES=$GPU_ID python packnet_cifar100_main_normal.py \
+        --arch $ARCH \
+        --dataset ${DATASETS[HISTORY_ID]} --num_classes 5 \
+        --load_folder checkpoints/baseline/experiment1/$ARCH/${DATASETS[HISTORY_ID]} \
+        --mode inference
+done
